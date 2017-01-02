@@ -4,18 +4,18 @@
 
     $error = "";
 
-    $googleapikey = "AIzaSyBa7jgMX2sp7jSIL0IzxGRfmVcjXTukVJ0";
+    $googleapikey = "";
 
-    $silentpassenderapikey = "9a7f3c3e-9bc5-4889-8b3e-1f0af6e6eb41";
+    $silentpassenderapikey = "";
 
-    $ch = curl_init('http://api.silentpassenger.com/rest/v2/9a7f3c3e-9bc5-4889-8b3e-1f0af6e6eb41/MapView/Vehicles?userid=19542');
+    $ch = curl_init('http://api.silentpassenger.com/rest/v2/************/MapView/Vehicles?userid=19542');
 
     curl_setopt($ch,CURLOPT_RETURNTRANSFER,TRUE);
     $xml = curl_exec($ch);
     curl_close($ch);
     $parsed = new SimpleXMLElement($xml);
 
-    $mapsurl = file_get_contents("https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins=Washington,DC&destinations=New+York+City,NY&key=AIzaSyBa7jgMX2sp7jSIL0IzxGRfmVcjXTukVJ0");
+    $mapsurl = file_get_contents("https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins=Washington,DC&destinations=New+York+City,NY&key=************************************************");
     $mapsjson = json_decode($mapsurl,true);
 
 
